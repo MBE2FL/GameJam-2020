@@ -9,6 +9,8 @@ public class movement : MonoBehaviour
 
     public float speedMultiplier = 2.0f;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,16 +25,20 @@ public class movement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Vector3 force = new Vector3(0, 0, 0);
+
         if (Input.GetKey(KeyCode.W))
-            _rb.AddForce(Vector3.forward * speedMultiplier);
+            force += Vector3.forward;
 
         if (Input.GetKey(KeyCode.A))
-            _rb.AddForce(Vector3.left * speedMultiplier);
+            force += Vector3.left;
 
         if (Input.GetKey(KeyCode.S))
-            _rb.AddForce(Vector3.back * speedMultiplier);
+            force += Vector3.back;
 
         if (Input.GetKey(KeyCode.D))
-            _rb.AddForce(Vector3.right * speedMultiplier);
+            force += Vector3.right;
+
+        _rb.AddForce(force.normalized * speedMultiplier);
     }
 }
