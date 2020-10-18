@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerLobby : PunBehaviour
 {
+    public GameObject p1, p2;
     public override void OnConnectedToPhoton()
     {
         print("connected to photon");
@@ -25,11 +26,11 @@ public class PlayerLobby : PunBehaviour
         GameObject player;
         if (PhotonNetwork.isMasterClient)
         {
-          player=  PhotonNetwork.Instantiate("Player", new Vector3(5, 2.25f, -10.5f), Quaternion.identity, 0);
+          player=  PhotonNetwork.Instantiate(p1.name, new Vector3(5, 2.25f, -10.5f), Quaternion.identity, 0);
         }
         else
         {
-           player = PhotonNetwork.Instantiate("Player 2", new Vector3(10, 2.25f, -10.5f), Quaternion.identity, 0);
+           player = PhotonNetwork.Instantiate(p2.name, new Vector3(10, 2.25f, -10.5f), Quaternion.identity, 0);
         }
         Camera.main.GetComponent<CameraMovement>().inst(player);
     }
