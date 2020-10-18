@@ -20,7 +20,8 @@ public class PlayerLobby : PunBehaviour
 
     public void toGame()
     {
-        PhotonNetwork.LoadLevel("samplescene");
+        if (PhotonNetwork.isMasterClient)
+            PhotonNetwork.LoadLevel("samplescene");
     }
 
     public void onGameStart()
