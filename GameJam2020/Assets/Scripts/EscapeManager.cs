@@ -100,6 +100,8 @@ public class EscapeManager : PunBehaviour
 
                     _diamondGrabbed = false;
                     photonView.RPC("updateDiamondGrabbed", PhotonTargets.Others, _diamondGrabbed);
+
+                    return;
                 }
 
 
