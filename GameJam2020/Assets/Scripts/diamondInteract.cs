@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using Photon;
+using UnityEngine;
 public class diamondInteract : PunBehaviour
 {
 
@@ -9,11 +9,14 @@ public class diamondInteract : PunBehaviour
     bool holdingDiamond = false;
 
     GameObject diamond;
+    PhotonView diamondView;
     Rigidbody diamondRB;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        diamondView = diamond.GetComponent<PhotonView>();
         diamond = null;
         diamondRB = null;
     }
@@ -33,6 +36,8 @@ public class diamondInteract : PunBehaviour
             diamondRB.isKinematic = true;
 
             holdingDiamond = true;
+
+            diamondView.TransferOwnership(PhotonNetwork.player);
         }
         else if (Input.GetKeyDown(KeyCode.E) && holdingDiamond || Input.GetKeyDown(KeyCode.R) && holdingDiamond)
         {

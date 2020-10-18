@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6733577590607377904}
   - component: {fileID: 6733577590607377902}
   - component: {fileID: 6733577590607377903}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6733577591056010102}
   - component: {fileID: 6733577591056010103}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: footsteps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 6733577591465982506}
   - component: {fileID: 7845011490823243454}
   - component: {fileID: -2253298928016269055}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player 2
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -658,7 +658,7 @@ GameObject:
   - component: {fileID: 6733577591937503750}
   - component: {fileID: 6733577591937503751}
   - component: {fileID: 6733577591937503752}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -754,7 +754,7 @@ GameObject:
   - component: {fileID: 6733577592343547181}
   - component: {fileID: 6733577592343547182}
   - component: {fileID: 6733577592343547183}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
