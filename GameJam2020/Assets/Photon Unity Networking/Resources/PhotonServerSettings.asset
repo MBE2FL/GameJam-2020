@@ -45,4 +45,7 @@ MonoBehaviour:
   - RequestForPickupItems
   - RequestForPickupTimes
   - TaggedPlayer
+  - resetTransform
+  - resetDiamond
+  - updateDiamondGrabbed
   DisableAutoOpenWizard: 1

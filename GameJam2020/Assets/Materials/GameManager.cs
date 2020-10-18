@@ -9,6 +9,17 @@ public class GameManager : MonoBehaviour
 
     int _baseColourID;
 
+    EscapeManager _escapeManager;
+
+
+    public EscapeManager EscapeManager
+    {
+        get
+        {
+            return _escapeManager;
+        }
+    }
+
 
     private void Awake()
     {
@@ -22,6 +33,15 @@ public class GameManager : MonoBehaviour
             Color colour = material.GetColor(_baseColourID);
             colour.a = 0.0f;
             material.SetColor(_baseColourID, colour);
+        }
+
+
+        // Find the escape manager.
+        _escapeManager = GetComponent<EscapeManager>();
+
+        if (!_escapeManager)
+        {
+            Debug.LogError("Game Manager: Failed to find the escape manager!");
         }
     }
 

@@ -566,6 +566,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 073ecb811da903b4aa5b49a4b761af0b, type: 3}
   m_PrefabInstance: {fileID: 98950872}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &203370815
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 203370816}
+  m_Layer: 0
+  m_Name: Diamond Spawn Test
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &203370816
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203370815}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.88, y: 3.07, z: -21.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &216828915 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: 1e886c87e17c7d34883b27b5e3e2a901, type: 3}
@@ -665,9 +695,11 @@ GameObject:
   - component: {fileID: 233663684}
   - component: {fileID: 233663683}
   - component: {fileID: 233663685}
+  - component: {fileID: 233663686}
+  - component: {fileID: 233663687}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: Game Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -717,6 +749,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p1: {fileID: 6218027997501599906, guid: 6d53f4e4384d09b48a1656cabdb13757, type: 3}
   p2: {fileID: 6733577591465982515, guid: d3f3c660fcf83174dbb202a09fc784c3, type: 3}
+--- !u!114 &233663686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233663682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d1b054f6aacc341a031455b2450068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _escapePoints: []
+  _diamondSpawnPoints:
+  - {fileID: 203370816}
+  _escapeTime: 5
+  _currTime: 0
+  _currEscapePoint: {fileID: 0}
+  _vignetteSpeed: 2
+  _vignetteCoverage: 0.6
+--- !u!114 &233663687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233663682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 2
+  instantiationId: 2
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!1001 &234643836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4273,7 +4352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 978218898794764485, guid: 153ed581be2ad274192e43b23863dbb6, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 978218898794764485, guid: 153ed581be2ad274192e43b23863dbb6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

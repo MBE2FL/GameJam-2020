@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlayerLobby : PunBehaviour
 {
     public GameObject p1, p2;
+
+
     public override void OnConnectedToPhoton()
     {
         print("connected to photon");
@@ -33,6 +35,7 @@ public class PlayerLobby : PunBehaviour
         {
             player = PhotonNetwork.Instantiate(p2.name, p2.transform.position, Quaternion.identity, 0);
         }
+
         Camera.main.GetComponent<CameraMovement>().inst(player);
     }
     public override void OnConnectedToMaster()
@@ -44,6 +47,7 @@ public class PlayerLobby : PunBehaviour
     {
         print("new player: " + newPlayer);
     }
+
     private void Awake()
     {
         PhotonNetwork.automaticallySyncScene = true;

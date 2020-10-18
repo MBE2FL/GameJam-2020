@@ -12,6 +12,11 @@ public class diamondInteract : PunBehaviour
     PhotonView diamondView;
     Rigidbody diamondRB;
 
+    public event System.Action _onDiamondGrabbed;
+    public event System.Action _onDiamondDropped;
+
+    EscapeManager _escapeManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +25,39 @@ public class diamondInteract : PunBehaviour
 
         diamondRB = diamond.GetComponent<Rigidbody>(); //sets the rigidbody and makes ti kinematic
 
+
+        // Find the escape manager.
+        GameObject gameManagerGO = GameObject.FindGameObjectWithTag("Game Manager");
+
+        if (!gameManagerGO)
+        {
+            Debug.LogError("Diamond Interact: Failed to find the game manager object!");
+        }
+        else
+        {
+            _escapeManager = gameManagerGO.GetComponent<EscapeManager>();
+
+            if (!_escapeManager)
+            {
+                Debug.LogError("Diamond Interact: Failed to find the escape manager!");
+            }
+            else
+            {
+                _escapeManager.addDiamondInteractable(this);
+
+                _escapeManager._onDiamondReset += onDiamondReset;
+            }
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (_escapeManager)
+        {
+            _escapeManager.removeDiamondInteractable(this);
+
+            _escapeManager._onDiamondReset -= onDiamondReset;
+        }
     }
 
     // Update is called once per frame
@@ -50,6 +88,10 @@ public class diamondInteract : PunBehaviour
         holdingDiamond = true;
 
         diamondView.TransferOwnership(PhotonNetwork.player);
+
+
+        // Notify listeners of diamond pickup.
+        _onDiamondGrabbed();
     }
 
     [PunRPC]
@@ -63,6 +105,10 @@ public class diamondInteract : PunBehaviour
             diamondRB.AddForce(transform.forward * 500);
        
         holdingDiamond = false;
+
+
+        // Notify listeners of diamond drop.
+        _onDiamondDropped();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -84,5 +130,12 @@ public class diamondInteract : PunBehaviour
         {
             triggerRange = false;
         }
+    }
+
+    void onDiamondReset()
+    {
+        diamondRB.isKinematic = false;
+        holdingDiamond = false;
+        triggerRange = false;
     }
 }
