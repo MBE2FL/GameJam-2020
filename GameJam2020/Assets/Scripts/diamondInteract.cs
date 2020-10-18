@@ -17,6 +17,8 @@ public class diamondInteract : PunBehaviour
 
     EscapeManager _escapeManager;
 
+    Light _playerLight;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,25 @@ public class diamondInteract : PunBehaviour
                 _escapeManager._onDiamondReset += onDiamondReset;
             }
         }
+
+
+
+        // Find the player's light.
+        Transform lightTrans = transform.Find("Light");
+
+        if (!lightTrans)
+        {
+            Debug.LogError("Diamond Interact: Failed to find non-local player's light child object!");
+        }
+        else
+        {
+            _playerLight = lightTrans.GetComponent<Light>();
+
+            if (!_playerLight)
+            {
+                Debug.LogError("Diamond Interact: Failed to find non-local player's light!");
+            }
+        }
     }
 
     private void OnDestroy()
@@ -69,10 +90,23 @@ public class diamondInteract : PunBehaviour
         if (Input.GetKeyDown(KeyCode.E) && triggerRange && !holdingDiamond)
         {
             photonView.RPC("GetDiamond", PhotonTargets.All, null);
+
+            holdingDiamond = true;
+
+            diamondView.TransferOwnership(PhotonNetwork.player);
+
+            //photonView.RPC("playerLight", PhotonTargets.Others, true);
         }
         else if (Input.GetKeyDown(KeyCode.E) && holdingDiamond || Input.GetKeyDown(KeyCode.R) && holdingDiamond)
         {
             photonView.RPC("DropDiamond", PhotonTargets.All, null);
+
+            if (Input.GetKeyDown(KeyCode.R)) //allows the player to throw the diamond
+                diamondRB.AddForce(transform.forward * 500);
+
+            holdingDiamond = false;
+
+            //photonView.RPC("playerLight", PhotonTargets.Others, false);
         }
 
     }
@@ -85,13 +119,12 @@ public class diamondInteract : PunBehaviour
 
         diamondRB.isKinematic = true;
 
-        holdingDiamond = true;
 
-        diamondView.TransferOwnership(PhotonNetwork.player);
-
-
-        // Notify listeners of diamond pickup.
-        _onDiamondGrabbed();
+        if (PhotonNetwork.isMasterClient)
+        {
+            // Notify listeners of diamond pickup.
+            _onDiamondGrabbed();
+        }
     }
 
     [PunRPC]
@@ -101,14 +134,28 @@ public class diamondInteract : PunBehaviour
         diamond.transform.SetParent(null); //makes diamond an orphan
 
         diamondRB.isKinematic = false;
-        if (Input.GetKeyDown(KeyCode.R)) //allows the player to throw the diamond
-            diamondRB.AddForce(transform.forward * 500);
-       
+
+
+        if (PhotonNetwork.isMasterClient)
+        {
+            // Notify listeners of diamond drop.
+            _onDiamondDropped();
+        }
+    }
+
+    [PunRPC]
+    void playerLight(bool isLit)
+    {
+        _playerLight.gameObject.SetActive(isLit);
+    }
+
+    public void dropFromBullet()
+    {
+        photonView.RPC("DropDiamond", PhotonTargets.All, null);
+
         holdingDiamond = false;
 
-
-        // Notify listeners of diamond drop.
-        _onDiamondDropped();
+        //photonView.RPC("playerLight", PhotonTargets.Others, false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -137,5 +184,7 @@ public class diamondInteract : PunBehaviour
         diamondRB.isKinematic = false;
         holdingDiamond = false;
         triggerRange = false;
+
+        //photonView.RPC("playerLight", PhotonTargets.Others, false);
     }
 }

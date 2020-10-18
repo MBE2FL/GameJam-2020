@@ -1005,6 +1005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p1: {fileID: 6218027997501599906, guid: 6d53f4e4384d09b48a1656cabdb13757, type: 3}
   p2: {fileID: 6733577591465982515, guid: d3f3c660fcf83174dbb202a09fc784c3, type: 3}
+  lobbyName: {fileID: 0}
 --- !u!114 &233663686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1017,7 +1018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d1b054f6aacc341a031455b2450068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _escapePoints: []
+  _escapePoints: [{fileID: 189317243}, {fileID: 1229377938}, {fileID: 1256449597}]
   _diamondSpawnPoints:
   - {fileID: 203370816}
   _escapeTime: 5
@@ -5502,7 +5503,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &2035111234
 Light:
   m_ObjectHideFlags: 0
@@ -5514,8 +5515,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 10000
+  m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Intensity: 4000
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -5556,9 +5557,9 @@ Light:
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
+  m_AreaSize: {x: 0.5, y: 0.5}
   m_BounceIntensity: 1
-  m_ColorTemperature: 5500
+  m_ColorTemperature: 20000
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -5598,7 +5599,7 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
-  m_Intensity: 10000
+  m_Intensity: 4000
   m_EnableSpotReflector: 0
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -5942,6 +5943,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 978218898794764485, guid: 153ed581be2ad274192e43b23863dbb6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 978218898794764485, guid: 153ed581be2ad274192e43b23863dbb6,
         type: 3}
