@@ -48,4 +48,6 @@ MonoBehaviour:
   - resetTransform
   - resetDiamond
   - updateDiamondGrabbed
+  - playerLight
+  - fire
   DisableAutoOpenWizard: 1

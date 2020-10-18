@@ -17,6 +17,8 @@ public class diamondInteract : PunBehaviour
 
     EscapeManager _escapeManager;
 
+    Light _playerLight;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,25 @@ public class diamondInteract : PunBehaviour
                 _escapeManager._onDiamondReset += onDiamondReset;
             }
         }
+
+
+
+        // Find the player's light.
+        Transform lightTrans = transform.Find("Light");
+
+        if (!lightTrans)
+        {
+            Debug.LogError("Diamond Interact: Failed to find non-local player's light child object!");
+        }
+        else
+        {
+            _playerLight = lightTrans.GetComponent<Light>();
+
+            if (!_playerLight)
+            {
+                Debug.LogError("Diamond Interact: Failed to find non-local player's light!");
+            }
+        }
     }
 
     private void OnDestroy()
@@ -73,6 +94,8 @@ public class diamondInteract : PunBehaviour
             holdingDiamond = true;
 
             diamondView.TransferOwnership(PhotonNetwork.player);
+
+            photonView.RPC("playerLight", PhotonTargets.Others, true);
         }
         else if (Input.GetKeyDown(KeyCode.E) && holdingDiamond || Input.GetKeyDown(KeyCode.R) && holdingDiamond)
         {
@@ -82,6 +105,8 @@ public class diamondInteract : PunBehaviour
                 diamondRB.AddForce(transform.forward * 500);
 
             holdingDiamond = false;
+
+            photonView.RPC("playerLight", PhotonTargets.Others, false);
         }
 
     }
@@ -118,6 +143,12 @@ public class diamondInteract : PunBehaviour
         }
     }
 
+    [PunRPC]
+    void playerLight(bool isLit)
+    {
+        _playerLight.gameObject.SetActive(isLit);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (!photonView.isMine && PhotonNetwork.connected)
@@ -144,5 +175,7 @@ public class diamondInteract : PunBehaviour
         diamondRB.isKinematic = false;
         holdingDiamond = false;
         triggerRange = false;
+
+        photonView.RPC("playerLight", PhotonTargets.Others, false);
     }
 }
