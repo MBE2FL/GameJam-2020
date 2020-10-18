@@ -47,10 +47,6 @@ public class SoundEffectRand : MonoBehaviour //This script will be for playing s
             spookyTimer = spookyTimerStart;
             isTriggered = false;
         }
-        else if(spookyTimer <= 0.0f)
-        {
-            spookyTimer = spookyTimerStart;
-        }
 
         isTriggered = false;
     }
