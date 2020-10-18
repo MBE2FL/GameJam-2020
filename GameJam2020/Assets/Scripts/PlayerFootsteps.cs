@@ -20,19 +20,17 @@ public class PlayerFootsteps : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   //checks if the player is moving around
         if(player.GetComponent<Rigidbody>().velocity.x > 0.5f || player.GetComponent<Rigidbody>().velocity.x < -0.5f ||
            player.GetComponent<Rigidbody>().velocity.z > 0.5f || player.GetComponent<Rigidbody>().velocity.z < -0.5f)
         {
             //play footsteps
             if(!audioSource.isPlaying)
             {
-                int rand = Random.Range(0, 3);
+                int rand = Random.Range(0, footsteps.Count);
 
                 audioSource.clip = footsteps[rand];
                 audioSource.PlayDelayed(0.2f);
-                //Debug.Log("it be playing");
-                //choose next sound and play. maybe add timer for cooldown
             }
         }
     }
