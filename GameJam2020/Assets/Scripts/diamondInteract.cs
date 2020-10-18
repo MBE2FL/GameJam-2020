@@ -16,13 +16,10 @@ public class diamondInteract : PunBehaviour
     void Start()
     {
         diamondView = GameObject.FindGameObjectWithTag("Diamond").GetComponent<PhotonView>();
-        diamond = null;
-        diamondRB = null;
-    }
+        diamond = GameObject.FindGameObjectWithTag("Diamond").transform.gameObject;
 
-    public void DiamondView(GameObject obj)
-    {
-        diamondView = obj.GetComponent<PhotonView>();
+        diamondRB = diamond.GetComponent<Rigidbody>(); //sets the rigidbody and makes ti kinematic
+
     }
 
     // Update is called once per frame
@@ -48,7 +45,6 @@ public class diamondInteract : PunBehaviour
         diamond.transform.SetParent(this.transform); //sets the diamond to the transform of the player
         diamond.transform.localPosition = new Vector3(0, 1, 1.25f);
 
-        diamondRB = diamond.GetComponent<Rigidbody>(); //sets the rigidbody and makes ti kinematic
         diamondRB.isKinematic = true;
 
         holdingDiamond = true;
@@ -61,13 +57,11 @@ public class diamondInteract : PunBehaviour
     {
         diamond.transform.localPosition = new Vector3(0, 1, 2);
         diamond.transform.SetParent(null); //makes diamond an orphan
-        diamond = null;
 
         diamondRB.isKinematic = false;
         if (Input.GetKeyDown(KeyCode.R)) //allows the player to throw the diamond
             diamondRB.AddForce(transform.forward * 500);
-        diamondRB = null;
-
+       
         holdingDiamond = false;
     }
 
@@ -78,7 +72,6 @@ public class diamondInteract : PunBehaviour
         if (other.tag == "Diamond")
         {
             triggerRange = true;
-            diamond = other.transform.gameObject;
         }
     }
 
