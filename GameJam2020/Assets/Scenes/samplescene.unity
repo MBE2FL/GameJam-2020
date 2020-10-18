@@ -939,6 +939,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2407
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: cda470a0fc9be2e43ac2147c90d8c25e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
     - target: {fileID: 919132149155446097, guid: cda470a0fc9be2e43ac2147c90d8c25e, type: 3}
       propertyPath: m_Name
       value: Hallway 1
@@ -1788,6 +1792,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2407
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 97ae6dd67b527ef4a98136eb5c041b1f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
     - target: {fileID: 919132149155446097, guid: 97ae6dd67b527ef4a98136eb5c041b1f, type: 3}
       propertyPath: m_Name
       value: Hallway 9
@@ -1876,6 +1884,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2407
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: eb14d878ea6917b4b809f41c2e067bfe, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
     - target: {fileID: 919132149155446097, guid: eb14d878ea6917b4b809f41c2e067bfe, type: 3}
       propertyPath: m_Name
       value: Hallway 5
@@ -2212,6 +2224,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2407
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: e9c4056a5b3dca346855551efa2bbb61, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
     - target: {fileID: 919132149155446097, guid: e9c4056a5b3dca346855551efa2bbb61, type: 3}
       propertyPath: m_Name
       value: Hallway 7
@@ -2286,6 +2302,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2407
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 480f5147340a0284e95dce84bb224c5a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
     - target: {fileID: 919132149155446097, guid: 480f5147340a0284e95dce84bb224c5a, type: 3}
       propertyPath: m_Name
       value: Hallway 2
@@ -2510,6 +2530,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2407
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: b6b512bab92d16b4799404662f4bcd55, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
     - target: {fileID: 919132149155446097, guid: b6b512bab92d16b4799404662f4bcd55, type: 3}
       propertyPath: m_Name
       value: Hallway 3
@@ -2884,6 +2908,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2407
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 1e886c87e17c7d34883b27b5e3e2a901, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
     - target: {fileID: 919132149155446097, guid: 1e886c87e17c7d34883b27b5e3e2a901, type: 3}
       propertyPath: m_Name
       value: Hallway 8
@@ -3280,6 +3308,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2407
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 5e8eee7817e8abb498a43e16f99d1f0f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
     - target: {fileID: 919132149155446097, guid: 5e8eee7817e8abb498a43e16f99d1f0f, type: 3}
       propertyPath: m_Name
       value: Hallway 6
@@ -4026,6 +4058,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2407
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: fb630e240ee31fc4b915615a79307065, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
     - target: {fileID: 919132149155446097, guid: fb630e240ee31fc4b915615a79307065, type: 3}
       propertyPath: m_Name
       value: Hallway 10
@@ -4670,6 +4706,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2407
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 1b57b4267128d40479378424c87690d3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
     - target: {fileID: 919132149155446097, guid: 1b57b4267128d40479378424c87690d3, type: 3}
       propertyPath: m_Name
       value: Hallway 4
