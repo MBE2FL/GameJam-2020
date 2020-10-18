@@ -3,9 +3,35 @@ using System.Collections.Generic;
 using Photon;
 using UnityEngine;
 
-public class PlayerLobby : UnityEngine.MonoBehaviour
+public class PlayerLobby : PunBehaviour
 {
-   
+    public override void OnConnectedToPhoton()
+    {
+        print("connected to photon");
+    }
+
+    public override void OnJoinedLobby()
+    {
+        print("Joined Lobby");
+
+        RoomOptions ops= new RoomOptions();
+        ops.MaxPlayers = 2;
+        PhotonNetwork.JoinOrCreateRoom("new room", ops, PhotonNetwork.lobby);
+    }
+
+    public override void OnJoinedRoom()
+    {
+        print("jointed room ;>");
+    }
+    public override void OnConnectedToMaster()
+    {
+        print("joined Master");
+    }
+
+    public override void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
+    {
+        print("new player: " + newPlayer);
+    }
     private void Awake()
     {
         PhotonNetwork.automaticallySyncScene = true;
@@ -13,9 +39,10 @@ public class PlayerLobby : UnityEngine.MonoBehaviour
 
     private void Start()
     {
-        connection();
+        connect();
     }
-    void connection()
+
+    void connect()
     {
         // we check if we are connected or not, we join if we are , else we initiate the connection to the server.
         if (PhotonNetwork.connected)
