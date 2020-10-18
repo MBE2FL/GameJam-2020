@@ -34,10 +34,21 @@ public class ConeOfTruth : PunBehaviour
 
             if (!lightTrans)
             {
-                Debug.LogError("Cone Of Truth: Failed to find non-local player's light!");
+                Debug.LogError("Cone Of Truth: Failed to find non-local player's light child object!");
             }
+            else
+            {
+                Light light = lightTrans.GetComponent<Light>();
 
-            return;
+                if (!light)
+                {
+                    Debug.LogError("Cone Of Truth: Failed to find non-local player's light!");
+                }
+                else
+                {
+                    light.gameObject.SetActive(false);
+                }
+            }
         }
         // Local player's cone of truth.
         else
