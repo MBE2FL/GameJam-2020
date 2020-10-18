@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2035111234}
-  m_IndirectSpecularColor: {r: 131.16855, g: 162.52502, b: 215.10977, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -328,7 +328,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: efa7da184b02bb94ab9494dd5a67f167, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: efa7da184b02bb94ab9494dd5a67f167, type: 3}
       propertyPath: m_Name
       value: Master Bathroom
@@ -420,7 +420,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 073ecb811da903b4aa5b49a4b761af0b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: 073ecb811da903b4aa5b49a4b761af0b, type: 3}
       propertyPath: m_Name
       value: Billiard Room
@@ -878,7 +878,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 26f921af319d9e24db8605998b71f5a3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: 26f921af319d9e24db8605998b71f5a3, type: 3}
       propertyPath: m_Name
       value: Front Door
@@ -1063,7 +1063,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: cda470a0fc9be2e43ac2147c90d8c25e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: cda470a0fc9be2e43ac2147c90d8c25e, type: 3}
       propertyPath: m_Name
       value: Hallway 1
@@ -1775,7 +1775,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 4be1b1dc6826509459c379bce7194ce4, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: 4be1b1dc6826509459c379bce7194ce4, type: 3}
       propertyPath: m_Name
       value: Ballroom
@@ -1920,7 +1920,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 97ae6dd67b527ef4a98136eb5c041b1f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: 97ae6dd67b527ef4a98136eb5c041b1f, type: 3}
       propertyPath: m_Name
       value: Hallway 9
@@ -2012,7 +2012,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: eb14d878ea6917b4b809f41c2e067bfe, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: eb14d878ea6917b4b809f41c2e067bfe, type: 3}
       propertyPath: m_Name
       value: Hallway 5
@@ -2104,7 +2104,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 2acb56ff8a473fe4ca18e19c3f001c6f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: 2acb56ff8a473fe4ca18e19c3f001c6f, type: 3}
       propertyPath: m_Name
       value: Greenhouse
@@ -2182,7 +2182,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 3cc607af1c060e64c8441ba739f5da3d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: 3cc607af1c060e64c8441ba739f5da3d, type: 3}
       propertyPath: m_Name
       value: Guest Room
@@ -2360,7 +2360,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: e9c4056a5b3dca346855551efa2bbb61, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: e9c4056a5b3dca346855551efa2bbb61, type: 3}
       propertyPath: m_Name
       value: Hallway 7
@@ -2438,7 +2438,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 480f5147340a0284e95dce84bb224c5a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: 480f5147340a0284e95dce84bb224c5a, type: 3}
       propertyPath: m_Name
       value: Hallway 2
@@ -2559,7 +2559,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 50bcce7c15d84284eae5c10a41f687c6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: 50bcce7c15d84284eae5c10a41f687c6, type: 3}
       propertyPath: m_Name
       value: Master Bedroom
@@ -2670,7 +2670,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: b6b512bab92d16b4799404662f4bcd55, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: b6b512bab92d16b4799404662f4bcd55, type: 3}
       propertyPath: m_Name
       value: Hallway 3
@@ -3108,7 +3108,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 1e886c87e17c7d34883b27b5e3e2a901, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: 1e886c87e17c7d34883b27b5e3e2a901, type: 3}
       propertyPath: m_Name
       value: Hallway 8
@@ -3508,7 +3508,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 5e8eee7817e8abb498a43e16f99d1f0f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: 5e8eee7817e8abb498a43e16f99d1f0f, type: 3}
       propertyPath: m_Name
       value: Hallway 6
@@ -3648,7 +3648,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 5535b5d0ba43ee647972259eecaae53f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: 5535b5d0ba43ee647972259eecaae53f, type: 3}
       propertyPath: m_Name
       value: Kitchen
@@ -3750,7 +3750,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 6d4c1590271a5454ab709f80e1449d30, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: 6d4c1590271a5454ab709f80e1449d30, type: 3}
       propertyPath: m_Name
       value: Lounge
@@ -3909,7 +3909,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 117358ccfa5b646458475fecf56dc383, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: 117358ccfa5b646458475fecf56dc383, type: 3}
       propertyPath: m_Name
       value: Library
@@ -4201,7 +4201,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: b7f6d2c5bde4e3f4badff71d8a50672b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: b7f6d2c5bde4e3f4badff71d8a50672b, type: 3}
       propertyPath: m_Name
       value: Study
@@ -4347,7 +4347,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: dfe74199b07b7954cb54758dba499859, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: dfe74199b07b7954cb54758dba499859, type: 3}
       propertyPath: m_Name
       value: Bathroom 1
@@ -4520,7 +4520,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: efcbdfe4d83d492408be17e8839c5217, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: efcbdfe4d83d492408be17e8839c5217, type: 3}
       propertyPath: m_Name
       value: Bathroom
@@ -4930,7 +4930,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 1b57b4267128d40479378424c87690d3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: 1b57b4267128d40479378424c87690d3, type: 3}
       propertyPath: m_Name
       value: Hallway 4
@@ -5022,7 +5022,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 4214ca631c42679459b50cbd48b5713d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: 4214ca631c42679459b50cbd48b5713d, type: 3}
       propertyPath: m_Name
       value: Dinning Room
@@ -5318,7 +5318,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 01ce7fdccb58dc746af1ce45a5a0a0bb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 025b27b377d3b0e43a7d339e2e7431c3, type: 2}
+      objectReference: {fileID: 2100000, guid: acd51946be21f9f4e803cdbd851d6ee6, type: 2}
     - target: {fileID: 919132149155446097, guid: 01ce7fdccb58dc746af1ce45a5a0a0bb, type: 3}
       propertyPath: m_Name
       value: Hallway
