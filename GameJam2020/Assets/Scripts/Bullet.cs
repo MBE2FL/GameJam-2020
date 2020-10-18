@@ -39,6 +39,8 @@ public class Bullet : PunBehaviour
 
             diamondInteract diamondInt = collision.gameObject.transform.GetComponent<diamondInteract>();
             diamondInt.dropFromBullet();
+
+            Destroy(gameObject);
         }
     }
 }
