@@ -16,9 +16,13 @@ public class diamondInteract : PunBehaviour
     void Start()
     {
 
-        diamondView = diamond.GetComponent<PhotonView>();
         diamond = null;
         diamondRB = null;
+    }
+
+    public void DiamondView(GameObject obj)
+    {
+        diamondView = obj.GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
