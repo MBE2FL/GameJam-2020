@@ -8,14 +8,14 @@ public class diamondInteract : PunBehaviour
     bool triggerRange = false;
     bool holdingDiamond = false;
 
-    GameObject diamond;
+    public GameObject diamond;
     PhotonView diamondView;
     Rigidbody diamondRB;
 
     // Start is called before the first frame update
     void Start()
     {
-      //  diamondView = obj.GetComponent<PhotonView>();
+        diamondView = GameObject.FindGameObjectWithTag("Diamond").GetComponent<PhotonView>();
         diamond = null;
         diamondRB = null;
     }
