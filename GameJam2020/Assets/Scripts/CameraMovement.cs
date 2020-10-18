@@ -19,20 +19,16 @@ public class CameraMovement : MonoBehaviour
     [SerializeField]
     float _zOffset = -4.0f;
 
-
     Vector3 _targetPos;
     Vector3 _currVel;
 
-
-
-    private void Awake()
+    public void inst(GameObject player)
     {
         // Find the player's camera.
         _cam = Camera.main;
 
-
         // Find the player's transform.
-        GameObject playerGO = GameObject.FindGameObjectWithTag("Player");
+        GameObject playerGO = player;
 
         if (!playerGO)
         {
@@ -46,26 +42,15 @@ public class CameraMovement : MonoBehaviour
         _player = playerGO.transform;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void FixedUpdate()
     {
+        if (!_cam || !_player)
+            return;
         // Smoothly follow the player.
         Vector3 targetPos = _player.position;
         targetPos.y += _yOffset;
         targetPos.z += _zOffset;
         transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref _currVel, _lagSpeed * Time.fixedDeltaTime);
-
 
         // Rotate just the camera's pitch.
         //transform.rotation = Quaternion.Euler(new Vector3(_pitch, transform.rotation.y, transform.rotation.z));

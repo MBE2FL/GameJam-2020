@@ -1,31 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon;
 using UnityEngine;
 
-public class movement : MonoBehaviour
+public class movement : PunBehaviour
 {
     [SerializeField]
     Rigidbody _rb;
 
     public float speedMultiplier = 10.0f;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
-        
+        Rigidbody bod;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!photonView.isMine && PhotonNetwork.connected)
+            return;
+
         LookAtMouse();
 
     }
 
     private void FixedUpdate()
     {
+        if (!photonView.isMine && PhotonNetwork.connected)
+            return;
         //basic movement system for the player using the rigidbody
 
         Vector3 force = new Vector3(0, 0, 0);
