@@ -73,12 +73,6 @@ public class diamondInteract : PunBehaviour
             holdingDiamond = true;
 
             diamondView.TransferOwnership(PhotonNetwork.player);
-
-            if (PhotonNetwork.isMasterClient)
-            {
-                // Notify listeners of diamond pickup.
-                _onDiamondGrabbed();
-            }
         }
         else if (Input.GetKeyDown(KeyCode.E) && holdingDiamond || Input.GetKeyDown(KeyCode.R) && holdingDiamond)
         {
@@ -88,12 +82,6 @@ public class diamondInteract : PunBehaviour
                 diamondRB.AddForce(transform.forward * 500);
 
             holdingDiamond = false;
-
-            if (PhotonNetwork.isMasterClient)
-            {
-                // Notify listeners of diamond drop.
-                _onDiamondDropped();
-            }
         }
 
     }
@@ -105,6 +93,13 @@ public class diamondInteract : PunBehaviour
         diamond.transform.localPosition = new Vector3(0, 1, 1.25f);
 
         diamondRB.isKinematic = true;
+
+
+        if (PhotonNetwork.isMasterClient)
+        {
+            // Notify listeners of diamond pickup.
+            _onDiamondGrabbed();
+        }
     }
 
     [PunRPC]
@@ -114,6 +109,13 @@ public class diamondInteract : PunBehaviour
         diamond.transform.SetParent(null); //makes diamond an orphan
 
         diamondRB.isKinematic = false;
+
+
+        if (PhotonNetwork.isMasterClient)
+        {
+            // Notify listeners of diamond drop.
+            _onDiamondDropped();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
