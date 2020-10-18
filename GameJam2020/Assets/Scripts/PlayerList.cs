@@ -14,13 +14,12 @@ public class PlayerList : MonoBehaviour
     }
     public void setWaiting()
     {
-        p1.text = "P1 Ready!" + (PhotonNetwork.isMasterClient? "(ME)": "(0)");
-        if (!PhotonNetwork.isMasterClient)
-            if (PhotonNetwork.playerList.Length > 1)
-            {
-                p2.text = "P2 Ready!" + (!PhotonNetwork.isMasterClient? "(ME)": "");
-                ready.interactable = true;
-            }
+        p1.text = "P1 Ready!" + (PhotonNetwork.isMasterClient? "(ME)": "");
+        if (PhotonNetwork.playerList.Length > 1)
+        {
+            p2.text = "P2 Ready!" + (!PhotonNetwork.isMasterClient? "(ME)": "");
+            ready.interactable = true;
+        }
 
     }
 }
