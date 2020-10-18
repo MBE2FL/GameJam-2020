@@ -42,5 +42,9 @@ public class Bullet : PunBehaviour
 
             Destroy(gameObject);
         }
+        else if (collision.transform.tag == "Diamond")
+        {
+            collision.rigidbody.velocity = Vector3.zero;
+        }
     }
 }
