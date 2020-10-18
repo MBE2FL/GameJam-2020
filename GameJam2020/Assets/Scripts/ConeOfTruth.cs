@@ -15,6 +15,14 @@ public class ConeOfTruth : MonoBehaviour
     [SerializeField]
     List<Collider> _collidersInRange = new List<Collider>();
 
+    int _baseColourID;
+
+
+    private void Awake()
+    {
+        _baseColourID = Shader.PropertyToID("_BaseColor");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,12 +46,18 @@ public class ConeOfTruth : MonoBehaviour
                 float fade = ((_radius * _fadeRadiusMultiplier) - playerToObj.magnitude) / (_radius);
                 fade = Mathf.Clamp01(fade);
 
-                meshRenderer.material.SetFloat("Fade", fade);
+                //meshRenderer.material.SetFloat("Fade", fade);
+                Color colour = meshRenderer.material.GetColor(_baseColourID);
+                colour.a = fade;
+                meshRenderer.material.SetColor(_baseColourID, colour);
 
                 // Remove collider and set visibility to zero, when below fade theshold.
                 if (fade < _fadeTheshold)
                 {
-                    meshRenderer.material.SetFloat("Fade", 0.0f);
+                    //meshRenderer.material.SetFloat("Fade", 0.0f);
+                    colour = meshRenderer.material.GetColor(_baseColourID);
+                    colour.a = 0.0f;
+                    meshRenderer.material.SetColor(_baseColourID, colour);
 
                     //_collidersInRange.RemoveAt(i);
 
