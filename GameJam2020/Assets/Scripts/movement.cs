@@ -8,12 +8,14 @@ public class movement : PunBehaviour
     [SerializeField]
     Rigidbody _rb;
 
+    [SerializeField]
+    Animator animator;
+
     public float speedMultiplier = 10.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        Rigidbody bod;
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class movement : PunBehaviour
 
         LookAtMouse();
 
+        animator.SetFloat("Velocity", _rb.velocity.magnitude);
     }
 
     private void FixedUpdate()

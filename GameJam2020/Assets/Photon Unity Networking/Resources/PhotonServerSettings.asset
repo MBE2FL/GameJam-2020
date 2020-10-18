@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AppID: 898a1e9e-3bde-48a3-af73-5909b52e294d
   VoiceAppID: 
-  ChatAppID: 898a1e9e-3bde-48a3-af73-5909b52e294d
+  ChatAppID: 
   HostType: 1
   PreferredRegion: 1
   EnabledRegions: -1
@@ -22,7 +22,7 @@ MonoBehaviour:
   ServerAddress: 
   ServerPort: 5055
   VoiceServerPort: 5055
-  JoinLobby: 1
+  JoinLobby: 0
   EnableLobbyStatistics: 0
   PunLogging: 0
   NetworkLogging: 1
@@ -44,8 +44,8 @@ MonoBehaviour:
   - PunRespawn
   - RequestForPickupItems
   - RequestForPickupTimes
-  - TaggedPlayer
-  - resetTransform
   - resetDiamond
+  - resetTransform
+  - TaggedPlayer
   - updateDiamondGrabbed
   DisableAutoOpenWizard: 1
