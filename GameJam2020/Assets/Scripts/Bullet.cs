@@ -6,7 +6,7 @@ using UnityEngine;
 public class Bullet : PunBehaviour
 {
     [SerializeField]
-    float _lifetime = 5.0f;
+    float _lifetime = 2.0f;
     float _currTime = 0.0f;
 
     // Start is called before the first frame update
@@ -31,6 +31,14 @@ public class Bullet : PunBehaviour
         if (collision.transform.tag == "Player")
         {
             // Drop the diamond, and move back a bit.
+
+            
+            ContactPoint contactPoint = collision.GetContact(0);
+            collision.rigidbody.AddForceAtPosition((-contactPoint.normal) * 10.0f, contactPoint.point, ForceMode.Impulse);
+
+
+            diamondInteract diamondInt = collision.gameObject.transform.GetComponent<diamondInteract>();
+            diamondInt.dropFromBullet();
         }
     }
 }

@@ -149,6 +149,15 @@ public class diamondInteract : PunBehaviour
         _playerLight.gameObject.SetActive(isLit);
     }
 
+    public void dropFromBullet()
+    {
+        photonView.RPC("DropDiamond", PhotonTargets.All, null);
+
+        holdingDiamond = false;
+
+        photonView.RPC("playerLight", PhotonTargets.Others, false);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (!photonView.isMine && PhotonNetwork.connected)
