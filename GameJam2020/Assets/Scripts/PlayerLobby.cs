@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerLobby : PunBehaviour
 {
-    public GameObject p1, p2, diamond;
+    public GameObject p1, p2;
     public override void OnConnectedToPhoton()
     {
         print("connected to photon");
@@ -23,16 +23,11 @@ public class PlayerLobby : PunBehaviour
     public override void OnJoinedRoom()
     {
         print("jointed room ;>");
-        GameObject player, thediamond;
+        GameObject player;
 
         if (PhotonNetwork.isMasterClient)
         {
             player = PhotonNetwork.Instantiate(p1.name, p1.transform.position, Quaternion.identity, 0);
-
-            //  //instantiate diamond 
-            //  thediamond = PhotonNetwork.Instantiate(diamond.name, diamond.transform.position, diamond.transform.rotation, 0);
-            //
-            //  player.GetComponent<diamondInteract>().DiamondView(thediamond);
         }
         else
         {
