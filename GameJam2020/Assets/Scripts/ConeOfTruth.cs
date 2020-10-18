@@ -87,11 +87,27 @@ public class ConeOfTruth : MonoBehaviour
 
             if (Physics.Raycast(transform.position, playerToObjDir, out hit, _radius * _fadeRadiusMultiplier))
             {
+                // Object is occluded from the player's line of sight.
                 if (collider != hit.collider)
                 {
+                    // The object has prevously been seen.
+                    if (_collidersInRange.Contains(collider))
+                    {
+                        // Set the object's visibilty to zero.
+                        MeshRenderer meshRenderer = collider.gameObject.GetComponent<MeshRenderer>();
+
+                        if (meshRenderer)
+                        {
+                            Color colour = meshRenderer.material.GetColor(_baseColourID);
+                            colour.a = 0.0f;
+                            meshRenderer.material.SetColor(_baseColourID, colour);
+                        }
+                    }
+
                     continue;
                 }
 
+                // The object has not previously been seen.
                 if (!_collidersInRange.Contains(collider))
                 {
                     _collidersInRange.Add(collider);
