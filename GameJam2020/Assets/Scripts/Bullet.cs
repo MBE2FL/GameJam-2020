@@ -6,7 +6,7 @@ using UnityEngine;
 public class Bullet : PunBehaviour
 {
     [SerializeField]
-    float _lifetime = 2.0f;
+    float _lifetime = 1.0f;
     float _currTime = 0.0f;
 
     // Start is called before the first frame update
