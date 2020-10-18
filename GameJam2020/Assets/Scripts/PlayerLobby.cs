@@ -1,28 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Photon;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerLobby : PunBehaviour
 {
     public GameObject p1, p2;
-    public override void OnConnectedToPhoton()
-    {
-        print("connected to photon");
-    }
+    public TMP_Text lobbyName;
 
-    public override void OnJoinedLobby()
+    public void createRoom()
     {
-        print("Joined Lobby");
-
         RoomOptions ops = new RoomOptions();
         ops.MaxPlayers = 2;
-        PhotonNetwork.JoinOrCreateRoom("new room", ops, PhotonNetwork.lobby);
+        PhotonNetwork.JoinOrCreateRoom(lobbyName.text, ops, PhotonNetwork.lobby);
+        PhotonNetwork.LoadLevel("Waiting");
     }
 
-    public override void OnJoinedRoom()
+    public void toGame()
     {
-        print("jointed room ;>");
+        PhotonNetwork.LoadLevel("samplescene");
+    }
+
+    public void onGameStart()
+    {
         GameObject player;
 
         if (PhotonNetwork.isMasterClient)
@@ -35,6 +37,21 @@ public class PlayerLobby : PunBehaviour
         }
         Camera.main.GetComponent<CameraMovement>().inst(player);
     }
+
+    public override void OnConnectedToPhoton()
+    {
+        print("connected to photon");
+    }
+
+    public override void OnJoinedLobby()
+    {
+        print("Joined Lobby");
+    }
+
+    public override void OnJoinedRoom()
+    {
+        print("jointed room ;>");
+    }
     public override void OnConnectedToMaster()
     {
         print("joined Master");
@@ -43,6 +60,8 @@ public class PlayerLobby : PunBehaviour
     public override void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
     {
         print("new player: " + newPlayer);
+
+        GameObject.FindObjectOfType<PlayerList>().setWaiting();
     }
     private void Awake()
     {
@@ -60,8 +79,8 @@ public class PlayerLobby : PunBehaviour
         if (PhotonNetwork.connected)
         {
             // #Critical we need at this point to attempt joining a Random Room. If it fails, we'll get notified in OnJoinRandomFailed() and we'll create one.
-            PhotonNetwork.JoinRandomRoom();
-            print("Photon connected");
+            //PhotonNetwork.JoinRandomRoom();
+            print("Photon connected already");
         }
         else
         {
