@@ -51,6 +51,7 @@ public class PlayerLobby : PunBehaviour
     public override void OnJoinedRoom()
     {
         print("jointed room ;>");
+      //  GameObject.FindObjectOfType<PlayerList>().setWaiting();
     }
     public override void OnConnectedToMaster()
     {
@@ -61,7 +62,6 @@ public class PlayerLobby : PunBehaviour
     {
         print("new player: " + newPlayer);
 
-        GameObject.FindObjectOfType<PlayerList>().setWaiting();
     }
     private void Awake()
     {

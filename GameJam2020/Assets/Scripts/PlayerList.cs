@@ -8,7 +8,7 @@ public class PlayerList : MonoBehaviour
     public TMP_InputField p1, p2;
     public Button ready;
 
-    private void Start()
+    private void Update()
     {
         setWaiting();
     }
