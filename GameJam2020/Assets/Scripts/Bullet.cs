@@ -34,7 +34,7 @@ public class Bullet : PunBehaviour
 
             
             ContactPoint contactPoint = collision.GetContact(0);
-            collision.rigidbody.AddForceAtPosition((-contactPoint.normal) * 10.0f, contactPoint.point, ForceMode.Impulse);
+            collision.rigidbody.AddForceAtPosition((-contactPoint.normal) * 8.0f, contactPoint.point, ForceMode.Impulse);
 
 
             diamondInteract diamondInt = collision.gameObject.transform.GetComponent<diamondInteract>();

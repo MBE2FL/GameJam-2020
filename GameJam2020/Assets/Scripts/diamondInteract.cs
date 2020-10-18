@@ -95,7 +95,7 @@ public class diamondInteract : PunBehaviour
 
             diamondView.TransferOwnership(PhotonNetwork.player);
 
-            photonView.RPC("playerLight", PhotonTargets.Others, true);
+            //photonView.RPC("playerLight", PhotonTargets.Others, true);
         }
         else if (Input.GetKeyDown(KeyCode.E) && holdingDiamond || Input.GetKeyDown(KeyCode.R) && holdingDiamond)
         {
@@ -106,7 +106,7 @@ public class diamondInteract : PunBehaviour
 
             holdingDiamond = false;
 
-            photonView.RPC("playerLight", PhotonTargets.Others, false);
+            //photonView.RPC("playerLight", PhotonTargets.Others, false);
         }
 
     }
@@ -155,7 +155,7 @@ public class diamondInteract : PunBehaviour
 
         holdingDiamond = false;
 
-        photonView.RPC("playerLight", PhotonTargets.Others, false);
+        //photonView.RPC("playerLight", PhotonTargets.Others, false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -185,6 +185,6 @@ public class diamondInteract : PunBehaviour
         holdingDiamond = false;
         triggerRange = false;
 
-        photonView.RPC("playerLight", PhotonTargets.Others, false);
+        //photonView.RPC("playerLight", PhotonTargets.Others, false);
     }
 }
