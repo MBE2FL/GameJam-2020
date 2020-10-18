@@ -26,7 +26,39 @@ public class ConeOfTruth : PunBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Non-local player's cone of truth.
+        if (!photonView.isMine && PhotonNetwork.connected)
+        {
+            // Turn off the non-local player's light.
+            Transform lightTrans = transform.Find("Light");
 
+            if (!lightTrans)
+            {
+                Debug.LogError("Cone Of Truth: Failed to find non-local player's light!");
+            }
+
+            return;
+        }
+        // Local player's cone of truth.
+        else
+        {
+            // Use the default layer.
+            gameObject.layer = 0;
+
+
+            MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+
+            if (!meshRenderer)
+            {
+                Debug.LogError("Cone Of Truth: Failed to find local player's mesh renderer!");
+            }
+            else
+            {
+                Color colour = meshRenderer.material.GetColor(_baseColourID);
+                colour.a = 1.0f;
+                meshRenderer.material.SetColor(_baseColourID, colour);
+            }
+        }
     }
 
     // Update is called once per frame
