@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        GameObject.FindObjectOfType<PlayerLobby>().onGameStart();
+
         _baseColourID = Shader.PropertyToID("_BaseColor");
 
         // Set all fade materials to not be visible on game start.
