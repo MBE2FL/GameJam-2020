@@ -523,7 +523,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d822252081ca1b14aacd15aa597b2c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diamond: {fileID: 978218898794764495, guid: 153ed581be2ad274192e43b23863dbb6, type: 3}
 --- !u!114 &6733577591465982506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -707,7 +706,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: af23768eae923be47a525c1d5af32684, type: 2}
+  - {fileID: 2100000, guid: 57fd602641aca0f46ba7d468ff245e1e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -803,7 +802,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: af23768eae923be47a525c1d5af32684, type: 2}
+  - {fileID: 2100000, guid: 57fd602641aca0f46ba7d468ff245e1e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
