@@ -28,13 +28,9 @@ public class PlayerLobby : PunBehaviour
         GameObject player;
 
         if (PhotonNetwork.isMasterClient)
-        {
-            player = PhotonNetwork.Instantiate(p1.name, p1.transform.position, Quaternion.identity, 0);
-        }
+            player = PhotonNetwork.Instantiate(p1.name, p1.transform.position, p1.transform.rotation, 0);
         else
-        {
-            player = PhotonNetwork.Instantiate(p2.name, p2.transform.position, Quaternion.identity, 0);
-        }
+            player = PhotonNetwork.Instantiate(p2.name, p2.transform.position, p2.transform.rotation, 0);
 
         Camera.main.GetComponent<CameraMovement>().inst(player);
     }
@@ -52,7 +48,7 @@ public class PlayerLobby : PunBehaviour
     public override void OnJoinedRoom()
     {
         print("jointed room ;>");
-      //  GameObject.FindObjectOfType<PlayerList>().setWaiting();
+        //  GameObject.FindObjectOfType<PlayerList>().setWaiting();
     }
     public override void OnConnectedToMaster()
     {
