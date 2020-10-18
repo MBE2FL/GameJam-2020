@@ -9,7 +9,11 @@ using UnityEngine.Rendering.HighDefinition;
 public class EscapeManager : PunBehaviour
 {
     [SerializeField]
+<<<<<<< HEAD
     List<Escape> _escapePoints;
+=======
+    public List<Transform> _escapePoints;
+>>>>>>> 08993e215f929a3263e07163dfe3b27f20b5be7d
 
     [SerializeField]
     public List<Transform> _diamondSpawnPoints;

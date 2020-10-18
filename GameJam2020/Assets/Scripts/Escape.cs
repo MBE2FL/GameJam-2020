@@ -1,9 +1,8 @@
-﻿using Photon;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Escape : PunBehaviour
+public class Escape : MonoBehaviour
 {
     [SerializeField]
     Light _light;
