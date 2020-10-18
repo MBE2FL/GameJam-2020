@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
 
     EscapeManager _escapeManager;
 
-
     public EscapeManager EscapeManager
     {
         get
@@ -20,10 +19,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
     private void Awake()
     {
-        GameObject.FindObjectOfType<PlayerLobby>().onGameStart();
 
         _baseColourID = Shader.PropertyToID("_BaseColor");
 
@@ -37,7 +34,6 @@ public class GameManager : MonoBehaviour
             material.SetColor(_baseColourID, colour);
         }
 
-
         // Find the escape manager.
         _escapeManager = GetComponent<EscapeManager>();
 
@@ -50,7 +46,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject.FindObjectOfType<PlayerLobby>().onGameStart();
+
     }
 
 #if UNITY_EDITOR
@@ -71,6 +68,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

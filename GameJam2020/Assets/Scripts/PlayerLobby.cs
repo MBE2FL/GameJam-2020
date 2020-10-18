@@ -59,7 +59,6 @@ public class PlayerLobby : PunBehaviour
     public override void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
     {
         print("new player: " + newPlayer);
-
     }
 
     private void Awake()
