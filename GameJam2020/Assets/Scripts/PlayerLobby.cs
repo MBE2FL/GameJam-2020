@@ -29,10 +29,10 @@ public class PlayerLobby : PunBehaviour
         {
             player = PhotonNetwork.Instantiate(p1.name, p1.transform.position, Quaternion.identity, 0);
 
-            //instantiate diamond 
-            thediamond = PhotonNetwork.Instantiate(diamond.name, diamond.transform.position, diamond.transform.rotation, 0);
-
-            player.GetComponent<diamondInteract>().DiamondView(thediamond);
+            //  //instantiate diamond 
+            //  thediamond = PhotonNetwork.Instantiate(diamond.name, diamond.transform.position, diamond.transform.rotation, 0);
+            //
+            //  player.GetComponent<diamondInteract>().DiamondView(thediamond);
         }
         else
         {

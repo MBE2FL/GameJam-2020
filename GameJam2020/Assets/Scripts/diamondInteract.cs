@@ -15,7 +15,7 @@ public class diamondInteract : PunBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+      //  diamondView = obj.GetComponent<PhotonView>();
         diamond = null;
         diamondRB = null;
     }
