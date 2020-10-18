@@ -29,10 +29,10 @@ public class Gun : PunBehaviour
         {
             //photonView.RPC("fire", PhotonTargets.All);
 
-            GameObject bullet = PhotonNetwork.Instantiate(_bulletPrefab.name, transform.position + transform.forward * 10.0f, transform.rotation, 0);
+            GameObject bullet = PhotonNetwork.Instantiate(_bulletPrefab.name, transform.position + transform.forward * 2.0f, transform.rotation, 0);
 
             Vector3 force = transform.forward * _bulletSpeed;
-            bullet.GetComponent<Rigidbody>().AddForce(force);
+            bullet.GetComponent<Rigidbody>().AddForce(force, ForceMode.Impulse);
 
             _currReloadTimer = 0.0f;
         }
