@@ -50,4 +50,6 @@ MonoBehaviour:
   - updateDiamondGrabbed
   - playerLight
   - fire
+  - turnOff
+  - turnOn
   DisableAutoOpenWizard: 1

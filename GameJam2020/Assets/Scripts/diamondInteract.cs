@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Photon;
+using TMPro;
 using UnityEngine;
 public class diamondInteract : PunBehaviour
 {
@@ -18,6 +19,15 @@ public class diamondInteract : PunBehaviour
     EscapeManager _escapeManager;
 
     Light _playerLight;
+
+
+    public bool HoldingDiamond
+    {
+        get
+        {
+            return holdingDiamond;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()

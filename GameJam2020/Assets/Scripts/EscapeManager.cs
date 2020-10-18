@@ -9,7 +9,7 @@ using UnityEngine.Rendering.HighDefinition;
 public class EscapeManager : PunBehaviour
 {
     [SerializeField]
-    List<Transform> _escapePoints;
+    List<Escape> _escapePoints;
 
     [SerializeField]
     List<Transform> _diamondSpawnPoints;
@@ -21,7 +21,8 @@ public class EscapeManager : PunBehaviour
     [SerializeField]
     float _currTime = 0.0f;
     [SerializeField]
-    Transform _currEscapePoint;
+    Escape _currEscapePoint;
+    int _currEscapeIndex;
 
     Vignette _vignette;
     [SerializeField]
@@ -32,7 +33,6 @@ public class EscapeManager : PunBehaviour
     GameObject _diamond;
 
     public event System.Action _onDiamondReset;
-
 
 
     private void Awake()
@@ -99,7 +99,9 @@ public class EscapeManager : PunBehaviour
                     pickDiamondSpawnPoint();
 
                     _diamondGrabbed = false;
-                    photonView.RPC("updateDiamondGrabbed", PhotonTargets.Others, _diamondGrabbed);
+                    _currEscapePoint = null;
+                    _currEscapeIndex = -1;
+                    photonView.RPC("updateDiamondGrabbed", PhotonTargets.Others, _diamondGrabbed, _currEscapeIndex);
 
                     return;
                 }
@@ -138,7 +140,7 @@ public class EscapeManager : PunBehaviour
     }
 
     [PunRPC]
-    void updateDiamondGrabbed(bool diamondGrabbed)
+    void updateDiamondGrabbed(bool diamondGrabbed, int escapeIndex)
     {
         _diamondGrabbed = diamondGrabbed;
 
@@ -146,32 +148,51 @@ public class EscapeManager : PunBehaviour
         {
             _vignette.intensity.value = 0.0f;
         }
+
+
+        // Escape point stuff
+        if (escapeIndex <= 0)
+        {
+            _currEscapePoint = null;
+        }
+        else
+        {
+            _currEscapePoint = _escapePoints[escapeIndex];
+        }
+
+        if (diamondGrabbed && _currEscapePoint)
+        {
+            _currEscapePoint.turnOn();
+        }
+        else if (_currEscapePoint)
+        {
+            _currEscapePoint.turnOff();
+        }
     }
 
     void onDiamondGrabbed()
     {
-        _diamondGrabbed = true;
-        photonView.RPC("updateDiamondGrabbed", PhotonTargets.Others, _diamondGrabbed);
-
-        // Display effect.
-
         // Display random escape point.
         pickEscapePoint(null);
+
+        _diamondGrabbed = true;
+        photonView.RPC("updateDiamondGrabbed", PhotonTargets.Others, _diamondGrabbed, _currEscapeIndex);
     }
 
     void onDiamondDropped()
     {
+        // Hide designated escape point.
+        _currEscapePoint = null;
+        _currEscapeIndex = -1;
+
         _diamondGrabbed = false;
-        photonView.RPC("updateDiamondGrabbed", PhotonTargets.Others, _diamondGrabbed);
+        photonView.RPC("updateDiamondGrabbed", PhotonTargets.Others, _diamondGrabbed, _currEscapeIndex);
 
         // Stop display effect.
         _vignette.intensity.value = 0.0f;
-
-        // Hide designated escape point.
-        _currEscapePoint = null;
     }
 
-    void pickEscapePoint(Transform prevPoint)
+    void pickEscapePoint(Escape prevPoint)
     {
         if (_escapePoints.Count <= 0)
         {
@@ -182,10 +203,11 @@ public class EscapeManager : PunBehaviour
         // Player has a previous escape point.
         if (prevPoint)
         {
-            List<Transform> temp = new List<Transform>(_escapePoints);
+            List<Escape> temp = new List<Escape>(_escapePoints);
             temp.Remove(prevPoint);
 
             int randomIndex = Random.Range(0, temp.Count);
+            _currEscapeIndex = randomIndex;
 
             _currEscapePoint = temp[randomIndex];
         }
@@ -193,6 +215,7 @@ public class EscapeManager : PunBehaviour
         else
         {
             int randomIndex = Random.Range(0, _escapePoints.Count);
+            _currEscapeIndex = randomIndex;
 
             _currEscapePoint = _escapePoints[randomIndex];
         }
