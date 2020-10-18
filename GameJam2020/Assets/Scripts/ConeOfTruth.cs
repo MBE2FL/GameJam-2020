@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using Photon;
 
-public class ConeOfTruth : MonoBehaviour
+public class ConeOfTruth : PunBehaviour
 {
     [SerializeField]
     float _radius = 10.0f;
@@ -17,7 +18,6 @@ public class ConeOfTruth : MonoBehaviour
 
     int _baseColourID;
 
-
     private void Awake()
     {
         _baseColourID = Shader.PropertyToID("_BaseColor");
@@ -26,12 +26,15 @@ public class ConeOfTruth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!photonView.isMine && PhotonNetwork.connected)
+            return;
+
         // Adjust the visibility of all the previous frame's objects.
         for (int i = 0; i < _collidersInRange.Count; ++i)
         {
@@ -71,7 +74,6 @@ public class ConeOfTruth : MonoBehaviour
                 Debug.DrawRay(transform.position, playerToObj.normalized * _radius, Color.green);
             }
         }
-
 
         // Find all the objects in range for this frame.
         int layerMask = 1 << 9;
@@ -114,7 +116,6 @@ public class ConeOfTruth : MonoBehaviour
                 }
             }
         }
-
 
         Debug.DrawRay(transform.position, transform.forward * _radius, Color.red);
     }
