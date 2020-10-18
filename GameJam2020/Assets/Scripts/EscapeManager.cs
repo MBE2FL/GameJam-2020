@@ -99,7 +99,7 @@ public class EscapeManager : PunBehaviour
                     pickDiamondSpawnPoint();
 
                     _diamondGrabbed = false;
-                    photonView.RPC("updateDiamondGrabbed", PhotonTargets.Others);
+                    photonView.RPC("updateDiamondGrabbed", PhotonTargets.Others, _diamondGrabbed);
                 }
 
 
@@ -149,7 +149,7 @@ public class EscapeManager : PunBehaviour
     void onDiamondGrabbed()
     {
         _diamondGrabbed = true;
-        photonView.RPC("updateDiamondGrabbed", PhotonTargets.Others);
+        photonView.RPC("updateDiamondGrabbed", PhotonTargets.Others, _diamondGrabbed);
 
         // Display effect.
 
@@ -160,7 +160,7 @@ public class EscapeManager : PunBehaviour
     void onDiamondDropped()
     {
         _diamondGrabbed = false;
-        photonView.RPC("updateDiamondGrabbed", PhotonTargets.Others);
+        photonView.RPC("updateDiamondGrabbed", PhotonTargets.Others, _diamondGrabbed);
 
         // Stop display effect.
         _vignette.intensity.value = 0.0f;
